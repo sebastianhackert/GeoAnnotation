@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Populated Place Finder</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1> Welcome to finde the populate places in your text </h1>
+    <h2> upload your document(s) in the section beneath.</h2>
+    <p> Please select the language of you document(s)</p>
+        <section>
+            <select>
+                <option value="none" selected disabled hidden>Select a Language</option> <br>
+                <option value="english">English</option>
+                <option value="german">German</option>
+                <option value="mandarin">Mandarin</option>
+            </select>
+        </section>
+    <br>
+    <form method="POST" action="http://127.0.0.1:5000/submit" enctype="multipart/form-data" target="_blank">
+        <label for="author">Author</label><br>
+        <input type="text" name="author" placeholder="author" /><br>
+        <label for="title">Title</label><br>
+        <input type="text" name="title" placeholder="title" /> <br>
+        <label for="Fileupload">File Upload</label><br>
+        <input type="file" name="file"/> <br>
+        <button type="submit">Submit Upload </button>
+    </form>
+
+
+</body>
+</html>

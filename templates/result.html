@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    {% for key in paragraphs %}
+        <p id="{{key}}">
+            {% for word in paragraphs[key] %}
+                {% if word in matches %}
+                    <select name="match-{{word}}" id="match-{{word}}">
+                        <option value="" selected> {{word}} </option>
+                        {% for match in matches[word] %}
+                            <option value='{{match}}'>{{match}}</option>
+                        {% endfor %}
+                    </select>
+                {% else %}
+                    <span>{{word}}</span>
+                {% endif %}
+            {% endfor %}
+        </p>
+    {% endfor %}
+  <br>
+    <a href="/">Back to entry</a>
+</body>
+</html>
