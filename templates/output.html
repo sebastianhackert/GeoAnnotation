@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Outlook</title>
+
+</head>
+
+
+<body>
+<form method="POST" action="http://127.0.0.1:5000/submit/output/result" enctype="multipart/form-data" target="_blank">
+    <table id="table" class="display">
+        <thead>
+            <tr>
+                    <th scope="col"> Checkbox </th>
+                    <th scope="col"> ID </th>
+                    <th scope="col"> Author </th>
+                    <th scope="col"> Title </th>
+                    <th scope="col"> File </th>
+            </tr>
+        </thead>
+    {% for entry in output %}
+        <tbody>
+            <tr>
+                    <td><input type="checkbox" id='{{entry[0]}}' name='checkbox' value='{{entry[0]}}' > </td>
+                    <td>{{ entry[0] }}</td>
+                    <td>{{ entry[1] }}</td>
+                    <td>{{ entry[2] }}</td>
+                    <td>{{ entry[3] }}</td>
+
+
+            </tr>
+        </tbody>
+    {% endfor %}
+    </table>
+<br>
+    <button type="submit" id="submit" > Get your selected documents processed </button>
+</form>
+
+</body>
+ <!--onclick="GetSelected()"-->
+</html>
